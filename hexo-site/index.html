@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>如何使用Hexo搭建个人博客</title>
+  
+  <link rel="canonical" href="http://example.com/hexo-site/">
+  
+  <meta name="description" content="一直都有写点什么的习惯，记录形式经历过日记本-印象笔记-金山文档-钉钉文档-微信公众号-WP网站的迭代 。前四种形式都偏私密，公众号开放程度太差，WP网站维护成本又比较高。 了解到Hexo+Github搭建静态网站这种形式，轻便易操作，省去了过多的维护工作，同时可定制化也很不错，就准备搭建一个静态网">
+  
+  
+  <meta name="author" content="Lucas">
+  
+  
+  
+  <meta property="og:site_name" content="NicheSiteRoad" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="如何使用Hexo搭建个人博客" />
+  
+  <meta property="og:description" content="一直都有写点什么的习惯，记录形式经历过日记本-印象笔记-金山文档-钉钉文档-微信公众号-WP网站的迭代 。前四种形式都偏私密，公众号开放程度太差，WP网站维护成本又比较高。 了解到Hexo+Github搭建静态网站这种形式，轻便易操作，省去了过多的维护工作，同时可定制化也很不错，就准备搭建一个静态网">
+  
+  <meta property="og:url" content="http://example.com/hexo-site/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="如何使用Hexo搭建个人博客">
+  
+  <meta name="twitter:description" content="一直都有写点什么的习惯，记录形式经历过日记本-印象笔记-金山文档-钉钉文档-微信公众号-WP网站的迭代 。前四种形式都偏私密，公众号开放程度太差，WP网站维护成本又比较高。 了解到Hexo+Github搭建静态网站这种形式，轻便易操作，省去了过多的维护工作，同时可定制化也很不错，就准备搭建一个静态网">
+  
+  
+  
+  
+  <meta name="twitter:url" content="http://example.com/hexo-site/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'G-244ZMPB8SQ', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+  
+  <script src="/js/pic.min.js" defer></script>
+  
+
+  
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi Folks.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/categories/life" class="ml">Life</a>
+          
+        
+          
+          <a href="/categories/work" class="ml">Work</a>
+          
+        
+          
+          <a href="/categories/self" class="ml">Self</a>
+          
+        
+          
+          <a href="/categories/invest" class="ml">Invest</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>如何使用Hexo搭建个人博客</h2>
+
+  <p>一直都有写点什么的习惯，记录形式经历过日记本-印象笔记-金山文档-钉钉文档-微信公众号-WP网站的迭代 。前四种形式都偏私密，公众号开放程度太差，WP网站维护成本又比较高。</p>
+<p>了解到Hexo+Github搭建静态网站这种形式，轻便易操作，省去了过多的维护工作，同时可定制化也很不错，就准备搭建一个静态网站，专门用作后续的内容创作了。</p>
+<p>这篇文章就来整理下，如何使用Hexo+Github搭建专属个人博客，因本人也会持续使用这种形式进行内容创作，故与Hexo Blog使用过程中相关的一些学习也会一并记录。</p>
+<p>因此本篇文章可能会比较臃肿，请见谅。</p>
+<hr>
+<h1 id="一、创建Github-Pages"><a href="#一、创建Github-Pages" class="headerlink" title="一、创建Github Pages"></a>一、创建Github Pages</h1><p>进行博客搭建要借助 GitHub 为我们提供的仓库服务，并借用 GitHub 的仓库 Pages 功能来实现静态页面的显示，因此需要有一个 GitHub 账号。</p>
+<h2 id="1-注册一个Github账号"><a href="#1-注册一个Github账号" class="headerlink" title="1. 注册一个Github账号"></a>1. 注册一个Github账号</h2><h2 id="2-创建一个Github仓库"><a href="#2-创建一个Github仓库" class="headerlink" title="2. 创建一个Github仓库"></a>2. 创建一个Github仓库</h2><ol>
+<li><p>进入Github账号，点击左上方的<code>Repositories</code>，然后点击右上方的<code>New</code>按钮。</p>
+</li>
+<li><p>新创建一个仓库，按照如图所示去勾选，需要注意的是：<strong>Repository name 必须是 [你的账户名称].github.io,</strong> 之后点击右下方的 <code>Create repository</code>按钮。<img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgCreate%20repository.png"></p>
+</li>
+<li><p>进入当前仓库的 <code>Setting</code> 页面，左侧选择 <code>Pages</code> ，右侧就会展示 <code>GitHub Pages</code> 页面，点击链接，出现自己仓库的 readme.md 页面信息后表示创建成功。</p>
+</li>
+</ol>
+<h1 id="二、本地安装Hexo"><a href="#二、本地安装Hexo" class="headerlink" title="二、本地安装Hexo"></a>二、本地安装Hexo</h1><p>Hexo 依赖 Git 和 Node.js。因此需要先在本地安装 <code>Node.js</code> 和 <code>Git</code>环境之后，才可以使用<code>npm</code>来安装<code>Hexo</code> , 使用<code>Git</code> 进行后续博客的相关操作。</p>
+<h2 id="1-安装Node-js-环境"><a href="#1-安装Node-js-环境" class="headerlink" title="1. 安装Node.js 环境"></a>1. 安装Node.js 环境</h2><ol>
+<li><p>下载到本地后，双击应用安装即可。</p>
+</li>
+<li><p>安装完成后，使用 <code>node -v</code> 命令查看本地 node.js 版本信息，输出版本信息说明安装成功。</p>
+<blockquote>
+<p>有网友推荐此处可以顺便设置一下国内镜像，增加后续下载资源包的速度，我的建议是没太大必要，我实测使用国内阿里云的镜像，下载时会报错，况且国外速度其实也不会慢很多。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="2-安装Git环境"><a href="#2-安装Git环境" class="headerlink" title="2. 安装Git环境"></a>2. 安装Git环境</h2><ol>
+<li><p>下载与本机系统匹配的Git客户端，并完成安装。</p>
+</li>
+<li><p>安装完成后，使用 <code>git --version</code> 命令查看本地Git版本信息，输出版本信息说明安装成功。</p>
+</li>
+<li><p>进行本地Git信息的配置，在任意文件夹鼠标右键打开<code>Git Bash Here</code>进行本地Git信息的配置。</p>
+<ul>
+<li><p>使用 <code>git config --global user.name&quot;name&quot;</code> 配置本地用户信息，name 为你的Git 账户名。</p>
+</li>
+<li><p>使用 <code>git config --global user.email&quot;eamil@xx.com&quot;</code> 配置本地邮箱信息，email为你Git 账户的邮箱。</p>
+</li>
+<li><p>使用 <code>ssh-keygen -t rsa -C&quot;eamil@xx.com&quot;</code> 命令在本地生成私钥和密钥信息。[大致需要四次回车，第二次回车输入<code>y</code>]</p>
+</li>
+<li><p>密钥生成后，在本地 <code>~/.ssh</code> ，即用户路径的 .ssh 目录下找到 Git 的密钥和公钥 id_rsa.pub 文件。</p>
+</li>
+</ul>
+</li>
+<li><p>进行Git与GitHub 的授权认证。</p>
+<ul>
+<li><p>在 GitHub设置页面，选择左侧 <code>SSH and GPG keys</code> 内容，右侧新增一个 <code>SSH key </code>，上一步公钥文件内容作为 SSH 密钥添加到 GitHub 中，Title可以任意填写。<img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgsshkeys.png"></p>
+</li>
+<li><p>填写完成之后点击下方的<code>Add SSH key</code>。</p>
+</li>
+<li><p>使用控制台命令 <code>ssh -T git@github.com</code> 检查是否可以与远程通信，如果出现 Hi…  你的 GitHub 账户名称的内容，说明授权成功。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3. 安装Hexo"></a>3. 安装Hexo</h2><ol>
+<li><p>在你的电脑上，选择一个本地存放Hexo Blog文件的位置，后续Hexo的文件将全部存放在此文件夹。</p>
+</li>
+<li><p>进入到此文件夹中，右键选择 <code>Git Bash Here</code> 打开 Git 命令窗口。</p>
+</li>
+<li><p>使用命令 <code>npm install -g hexo-cli</code> 下载安装 Hexo 项目。</p>
+</li>
+<li><p>安装完成后，使用 <code>hexo -v</code> 命令查看本地hexo版本信息，输出版本信息说明安装成功。</p>
+</li>
+</ol>
+<h2 id="4-初始化本地Hexo-Blog"><a href="#4-初始化本地Hexo-Blog" class="headerlink" title="4. 初始化本地Hexo Blog"></a>4. 初始化本地Hexo Blog</h2><ol>
+<li><p>进入到存放Hexo Blog文件的文件夹，使用命令 <code>hexo init</code> 初始化 hexo 文件夹。</p>
+</li>
+<li><p>使用命令 <code>npm install</code> 安装必备的组件。</p>
+</li>
+<li><p>使用命令 <code>hexo g</code> 生成静态网页。</p>
+</li>
+<li><p>使用 <code>hexo s</code> 打开本地服务器，开启后可在浏览器 <code>localhost:4000/</code> 查看本地博客效果。</p>
+<blockquote>
+<p>此处鼠标右键复制或者手动在浏览器输入上方链接，切勿直接使用<code>ctrl + c</code>命令复制，因为Git中<code>ctrl + c</code>是Stop的快捷键，会让本地服务器停止工作，<code>localhost:4000/</code>这个链接你是绝对不可能打的开的，我被这个困扰了很久…</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="三、部署到Github仓库"><a href="#三、部署到Github仓库" class="headerlink" title="三、部署到Github仓库"></a>三、部署到Github仓库</h1><p>本地成功安装Hexo后，此刻你的个人博客还没有正式上线，你还需要将本地Hexo与GitHub仓库进行关联，才能通过访问Github Pages 查看博客内容。</p>
+<ol>
+<li><p>打开 hexo 目录下的 <code>_config.yml</code> 文件，修改配置内容。  </p>
+<pre><code class="highlight plaintext">deploy:
+    type: git
+    repository: https://github.com/[yourName]/[yourName].github.io.git
+    branch: main</code></pre>
+</li>
+<li><p>修改完之后，使用命令<code>npm install --save hexo-deployer-git</code>安装Hexo部署插件。</p>
+</li>
+<li><p>使用命令<code>hexo clean</code>清除缓存文件。</p>
+</li>
+<li><p>使用命令 <code>hexo g</code> 生成静态网页。</p>
+</li>
+<li><p>使用命令 <code>hexo d</code> 将项目部署到远程仓库。</p>
+</li>
+<li><p>此刻你就可以通过访问Github Pages 查看博客内容了。</p>
+<blockquote>
+<p>如果<code>hexo d</code>之后出现需要输入账号密码的对话框，账号直接输入GitHub账号即可，下一个对话框切记不要输入GitHub密码，此对话框需要输入的是Token,获取路径为GitHub-Setting-Developer Setting-Personal access tokens。<img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgtokens.png"></p>
+</blockquote>
+</li>
+</ol>
+<p><strong>以上就是使用Hexo+GitHub搭建个人博客的全过程了，之后你可以根据需要安装主题，进行博客的装修，安装统计分析代码等等操作，让你的博客朝着你喜欢的方向前进。</strong></p>
+<p><strong>以下为搭建博客中可能遇到的一些Bug以及想运营好博客需要了解的一些知识，不感兴趣可以直接略过</strong></p>
+<h1 id="四、Bug及解决方案"><a href="#四、Bug及解决方案" class="headerlink" title="四、Bug及解决方案"></a>四、Bug及解决方案</h1><h2 id="1-如果默认端口4000已经被占用"><a href="#1-如果默认端口4000已经被占用" class="headerlink" title="1. 如果默认端口4000已经被占用"></a>1. 如果默认端口4000已经被占用</h2><ul>
+<li>使用命令<code>hexoblog1 hexo s -p xxxx</code>指定合适的端口号</li>
+</ul>
+<h2 id="2-error：spawn-failed"><a href="#2-error：spawn-failed" class="headerlink" title="2. error：spawn failed"></a>2. error：spawn failed</h2><ol>
+<li><p>删除根目录下的<code>.deploy_git</code>文件夹</p>
+</li>
+<li><p>输入<code>git config --global core.autocrlf false</code></p>
+</li>
+<li><p>依次执行hexo三连：<code>hexo clean``hexo g``hexo d</code></p>
+</li>
+</ol>
+<h1 id="五、Hexo-Blog相关知识"><a href="#五、Hexo-Blog相关知识" class="headerlink" title="五、Hexo Blog相关知识"></a>五、Hexo Blog相关知识</h1><h2 id="1-npm命令行"><a href="#1-npm命令行" class="headerlink" title="1. npm命令行"></a>1. npm命令行</h2><pre><code class="highlight plaintext"># 全局安装
+npm install -g
+# 会把xxx包安装到node_modules目录中
+npm install --save</code></pre>
+
+<h2 id="2-Hexo命令行"><a href="#2-Hexo命令行" class="headerlink" title="2. Hexo命令行"></a>2. Hexo命令行</h2><pre><code class="highlight plaintext"># 清除缓存文件
+hexo clean
+# 生成文件
+hexo g
+# 本地预览
+hexo s
+# 部署至服务器/网站托管
+hexo d
+# 新增post
+hexo n &lt;title&gt;
+# 新增page
+hexo new page &lt;title&gt; 
+# 初始化博客
+hexo init</code></pre>
+
+<h2 id="3-自定义域名配置"><a href="#3-自定义域名配置" class="headerlink" title="3. 自定义域名配置"></a>3. 自定义域名配置</h2><h2 id="4-自定义Url设置"><a href="#4-自定义Url设置" class="headerlink" title="4. 自定义Url设置"></a>4. 自定义Url设置</h2><p>Hexo文章默认的Url不利于SEO，因此最好是可以进行Url的自定义。</p>
+<ul>
+<li>打开 hexo 目录下的 <code>_config.yml</code> 文件，修改<code>permalink:</code>后面的内容进行自定义设置。</li>
+</ul>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+  <p><a class="classtest-link" href="/tags/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="tag">Hexo 个人博客</a> — Jun 30, 2024</p>
+  
+
+<script src="https://giscus.app/client.js"
+        data-repo="nichesiteroad/nichesiteroad.github.io"
+        data-repo-id="R_kgDOMPMWxw"
+        data-category="[ENTER CATEGORY NAME HERE]"
+        data-category-id="[ENTER CATEGORY ID HERE]"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+        </div>
+        <div class="row mt-2">
+  <h3>Search</h3>
+  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
+  <div style="margin-top: 1.5rem;">
+    <ul id="result"></ul>
+  </div>
+</div>
+        <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Copyright ❤ NSR <span id="sitetime"></span>
+    </div>	
+  
+</div>
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2024, 06, 30, 15, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    总访问<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_page_pv">
+  <span id="busuanzi_value_page_pv"></span>次阅读
+</span>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>
