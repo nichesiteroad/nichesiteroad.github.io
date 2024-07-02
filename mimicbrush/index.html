@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>如何将MimicBrush部署到你的电脑</title>
+  
+  <link rel="canonical" href="http://example.com/mimicbrush/">
+  
+  <meta name="description" content="当你看到这篇文章，对于MimicBrush项目应该已经有一定的了解了，想部署到自己的电脑上，跑一波看看，但是又苦于没有技术支撑？ 我来帮助你。 一、安装CondaMimicBrush这个项目是用Python语言编写的，因此你的电脑需要安装Python环境才可以，那么为什么要安装Conda呢？ 这是为">
+  
+  
+  <meta name="author" content="Lucas">
+  
+  
+  
+  <meta property="og:site_name" content="NicheSiteRoad" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="如何将MimicBrush部署到你的电脑" />
+  
+  <meta property="og:description" content="当你看到这篇文章，对于MimicBrush项目应该已经有一定的了解了，想部署到自己的电脑上，跑一波看看，但是又苦于没有技术支撑？ 我来帮助你。 一、安装CondaMimicBrush这个项目是用Python语言编写的，因此你的电脑需要安装Python环境才可以，那么为什么要安装Conda呢？ 这是为">
+  
+  <meta property="og:url" content="http://example.com/mimicbrush/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="如何将MimicBrush部署到你的电脑">
+  
+  <meta name="twitter:description" content="当你看到这篇文章，对于MimicBrush项目应该已经有一定的了解了，想部署到自己的电脑上，跑一波看看，但是又苦于没有技术支撑？ 我来帮助你。 一、安装CondaMimicBrush这个项目是用Python语言编写的，因此你的电脑需要安装Python环境才可以，那么为什么要安装Conda呢？ 这是为">
+  
+  
+  
+  
+  <meta name="twitter:url" content="http://example.com/mimicbrush/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <link rel="stylesheet" href="//unpkg.com/heti/umd/heti.min.css">
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'G-244ZMPB8SQ', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+  
+  <script src="/js/pic.min.js" defer></script>
+  
+
+  
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi Folks.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/categories/life" class="ml">Life</a>
+          
+        
+          
+          <a href="/categories/work" class="ml">Work</a>
+          
+        
+          
+          <a href="/categories/self" class="ml">Self</a>
+          
+        
+          
+          <a href="/categories/invest" class="ml">Invest</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>如何将MimicBrush部署到你的电脑</h2>
+
+  <p>当你看到这篇文章，对于MimicBrush项目应该已经有一定的了解了，想部署到自己的电脑上，跑一波看看，但是又苦于没有技术支撑？</p>
+<p>我来帮助你。</p>
+<h1 id="一、安装Conda"><a href="#一、安装Conda" class="headerlink" title="一、安装Conda"></a>一、安装Conda</h1><p>MimicBrush这个项目是用Python语言编写的，因此你的电脑需要安装Python环境才可以，那么为什么要安装Conda呢？</p>
+<p>这是为了方便你以后在本地跑其他的项目，既然你已经动了部署MimicBrush的贼心，我相信你以后也会恋上其他项目的。</p>
+<p>但是很多项目使用的Python版本是不一样的，使用到的一些第三方库版本也不一样，如果你的电脑上只有一个Python环境，那么当你以后想跑其他的项目时，不可避免的就会出现报错，通过Conda，你可以在本地安装无数个彼此独立的Python环境，一劳永逸。</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.anaconda.com/download/success">Conda官网</a>下载合适的版本安装即可</p>
+<blockquote>
+<p>Tips 1: 安装路径不要选择C盘，因为后续虚拟空间的项目会放在安装路径下的<code>envs</code>文件夹。</p>
+<p>Tips 2: 安装Conda的时候会附带安装Python，切记勾选，不然你还得再单独安装一次Python。例如当下最新版本附带的都是<code>python3.12</code><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgcondainstall.png"></p>
+<p>Tips 3: 如果有添加anaconda至环境变量的选项，建议勾选，省去后续自己配置的麻烦。</p>
+</blockquote>
+</li>
+<li><p>安装完成后，终端使用<code>conda -V</code>命令，如果输出Conda的版本信息，则安装成功。</p>
+</li>
+<li><p>如果你想要提高Conda下载包的速度，可以对Conda的下载源进行配置，打开<code>Anaconda</code>的控制台，输入<code>conda config</code>命令，系统会自动在当前用户的目录下<code>C:\Users\你的用户名</code>生成一个<code>.condarc</code>文件，打开之后添加合适的<a target="_blank" rel="noopener" href="https://mirror.tuna.tsinghua.edu.cn/help/anaconda/">镜像源</a>即可。</p>
+<blockquote>
+<p><strong>不推荐，国内镜像源时不时会抽疯，莫名其妙喜提Bug</strong></p>
+</blockquote>
+</li>
+</ul>
+<h1 id="二、安装Git环境"><a href="#二、安装Git环境" class="headerlink" title="二、安装Git环境"></a>二、安装Git环境</h1><p>MimicBrush需要安装两个Checkpoints，并且提供了Git的下载链接，因此，如果你本地安装好Git环境，会事半功倍。</p>
+<ul>
+<li><p>下载与本机系统匹配的Git客户端，并完成安装。</p>
+</li>
+<li><p>安装完成后，使用 <code>git --version</code> 命令查看本地Git版本信息，输出版本信息说明安装成功。</p>
+</li>
+</ul>
+<h1 id="三、下载MimicBrush项目及Checkpoints到本地"><a href="#三、下载MimicBrush项目及Checkpoints到本地" class="headerlink" title="三、下载MimicBrush项目及Checkpoints到本地"></a>三、下载MimicBrush项目及Checkpoints到本地</h1><ul>
+<li><p>使用Git命令将MimicBrush项目下载到本地电脑，为了避免文件名和<code>Checkpoints</code>中的<code>MimicBrush</code>冲突，建议将下载好的文件名命名为<code>Mimic</code>或者其他。</p>
+</li>
+<li><p>使用Git命令将MimicBrush项目的两个<code>Checkpoints</code>下载到本地电脑。</p>
+</li>
+<li><p>下载后的效果如图。<code>Mimic</code>为项目文件，<code>MimicBrush</code>和<code>cleansd</code>为项目依赖的两个Checkpoints。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgMimic.png"></p>
+</li>
+</ul>
+<h1 id="四、安装项目相关依赖"><a href="#四、安装项目相关依赖" class="headerlink" title="四、安装项目相关依赖"></a>四、安装项目相关依赖</h1><p>这个步骤是最麻烦的，主要是Python环境与第三方库的版本匹配，以及第三方库彼此之间的版本匹配问题，一旦版本不匹配，就会报错，修复好一个报错，又会有另一个报错，不过没有关系，我已经为你摸索出来一个适配的Python环境，你可以按照这个环境去安装。</p>
+<ul>
+<li><p>首先使用<code>conda create -n mimic python=3.10.14</code>命令，创建一个名为”mimic”的虚拟环境，并安装<code>Python 3.10.14</code>版本, 虚拟环境的名字你可以任意修改。</p>
+<blockquote>
+<p>项目中给的<code>Python==3.8.5</code>在安装<code>modelscope</code>时会报错。</p>
+</blockquote>
+</li>
+<li><p>将项目中的<code>requirements.txt</code>文件复制到虚拟环境文件夹下<code>\envs\mimic</code>。</p>
+</li>
+<li><p>在<code>Anaconda</code>的控制台中，激活你安装MimicBrush项目的虚拟环境，切换至虚拟环境文件目录，运行<code>pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/</code>命令安装依赖的第三方库。</p>
+<blockquote>
+<p>Tips 1: 上面的镜像源是我实际测试出来最稳定的，安装包也比较齐全，强烈推荐。</p>
+<p>Tips 2: <code>requirements.txt</code>中安装包的一些版本需要修改，项目中给定的版本安装时会报错，需要修改的安装包为<code>gradio==3.44.0</code>, <code>numpy==1.26.4</code>,如果还有其他的报错，你可以根据报错信息去针对性修改。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="五、修改Checkpoints路径"><a href="#五、修改Checkpoints路径" class="headerlink" title="五、修改Checkpoints路径"></a>五、修改Checkpoints路径</h1><p>你自然是要把Checkpoints的路径修改为你本地的路径，如何修改？</p>
+<ul>
+<li><p>打开项目下的<code>./configs/inference.yaml</code>文件，修改为你的本地路径。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imginference.png"></p>
+</li>
+</ul>
+<h1 id="六、运行"><a href="#六、运行" class="headerlink" title="六、运行"></a>六、运行</h1><p>终于到了激动人心的时刻了！</p>
+<ul>
+<li><p>在<code>Anaconda</code>的控制台中，激活你安装MimicBrush项目的虚拟环境，切换至项目文件目录，运行<code>python run_gradio3_demo.py</code>命令。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgmimicrun.png"></p>
+</li>
+<li><p>当跑出以下提示语时，就证明你已经部署成功了。</p>
+<blockquote>
+<p>Tips 1: 可能会提示CUDA未安装的信息，不过不影响项目使用，如果你的电脑有使用英伟达显卡，不想看到报错信息的话，也可以根据你的显卡安装对应的CUDA，以后跑项目可能会比较快。</p>
+<p>Tips 2: 可能会提示<code>Triton is not available</code>的信息，同样不影响项目使用，如果你有强迫症，也可以<a target="_blank" rel="noopener" href="https://huggingface.co/r4ziel/xformers_pre_built/blob/main/triton-2.0.0-cp310-cp310-win_amd64.whl">下载</a>安装。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgsuccess.png"></p>
+</li>
+<li><p>在本地输入<code> http://127.0.0.1:7860</code>，就可以体验此项目了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgtest.png"></p>
+<p><strong>以上就是在本地部署MimicBrush项目的全过程，以下为conda常用命令行，没兴趣可略过。</strong></p>
+</li>
+</ul>
+<hr>
+<h1 id="五、Conda常用命令"><a href="#五、Conda常用命令" class="headerlink" title="五、Conda常用命令"></a>五、Conda常用命令</h1><blockquote>
+<p>conda create -n myenv python&#x3D;3.8  </p>
+<p>#创建一个名为”myenv”的虚拟环境，并安装<code>Python 3.8</code>版本</p>
+<p>conda env list</p>
+<p>#查看已安装的虚拟环境 </p>
+<p>conda activate myenv</p>
+<p>#激活名为”myenv”的虚拟环境</p>
+<p>conda remove –name myenv –all</p>
+<p>#删除名为”myenv”的虚拟环境</p>
+<p>conda config –get channels</p>
+<p>#列出 conda 中配置的 channels</p>
+<p>conda install</p>
+<p>#安装包</p>
+<p>conda install -c bioconda presto</p>
+<p>#指定在bioconda渠道安装presto</p>
+<p>conda search beautifulsoup4</p>
+<p>#检测是否可从 Anaconda 存储库中获得<code>beautifulsoup4</code></p>
+</blockquote>
+
+  <p><a class="classtest-link" href="/tags/mimicbrush-%E5%B1%80%E9%83%A8%E9%87%8D%E7%BB%98/" rel="tag">mimicbrush 局部重绘</a> — Jul 2, 2024</p>
+  
+
+<script src="https://giscus.app/client.js"
+        data-repo="nichesiteroad/nichesiteroad.github.io"
+        data-repo-id="R_kgDOMPMWxw"
+        data-category="[ENTER CATEGORY NAME HERE]"
+        data-category-id="[ENTER CATEGORY ID HERE]"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<link rel="stylesheet" href="//unpkg.com/heti/umd/heti.min.css">
+
+        </div>
+        <div class="row mt-2">
+  <h3>Search</h3>
+  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
+  <div style="margin-top: 1.5rem;">
+    <ul id="result"></ul>
+  </div>
+</div>
+        <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Copyright ❤ NSR <span id="sitetime"></span>
+    </div>	
+  
+</div>
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2024, 06, 30, 15, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    总访问<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_page_pv">
+  <span id="busuanzi_value_page_pv"></span>次阅读
+</span>
+<span class="post-count">总字数3.7k </span>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>
