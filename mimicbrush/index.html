@@ -218,7 +218,7 @@
 <li><p><a target="_blank" rel="noopener" href="https://www.anaconda.com/download/success">Conda官网</a>下载合适的版本安装即可</p>
 <blockquote>
 <p>Tips 1: 安装路径不要选择C盘，因为后续虚拟空间的项目会放在安装路径下的<code>envs</code>文件夹。</p>
-<p>Tips 2: 安装Conda的时候会附带安装Python，切记勾选，不然你还得再单独安装一次Python。例如当下最新版本附带的都是<code>python3.12</code><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgcondainstall.png"></p>
+<p>Tips 2: 安装Conda的时候会附带安装Python，切记勾选，不然你还得再单独安装一次Python。例如当下最新版本附带的都是<code>python3.12</code><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/blog-img//img/anacondainstall.png"></p>
 <p>Tips 3: 如果有添加anaconda至环境变量的选项，建议勾选，省去后续自己配置的麻烦。</p>
 </blockquote>
 </li>
@@ -243,7 +243,7 @@
 <li><p>使用Git命令将MimicBrush项目的两个<code>Checkpoints</code>下载到本地电脑。</p>
 </li>
 <li><p>下载后的效果如图。<code>Mimic</code>为项目文件，<code>MimicBrush</code>和<code>cleansd</code>为项目依赖的两个Checkpoints。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgMimic.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/blog-img//img/projects.png"></p>
 </li>
 </ul>
 <h2 id="四、安装项目相关依赖"><a href="#四、安装项目相关依赖" class="headerlink" title="四、安装项目相关依赖"></a>四、安装项目相关依赖</h2><p>这个步骤是最麻烦的，主要是Python环境与第三方库的版本匹配，以及第三方库彼此之间的版本匹配问题，一旦版本不匹配，就会报错，修复好一个报错，又会有另一个报错，不过没有关系，我已经为你摸索出来一个适配的Python环境，你可以按照这个环境去安装。</p>
@@ -265,23 +265,23 @@
 <h2 id="五、修改Checkpoints路径"><a href="#五、修改Checkpoints路径" class="headerlink" title="五、修改Checkpoints路径"></a>五、修改Checkpoints路径</h2><p>你自然是要把Checkpoints的路径修改为你本地的路径，如何修改？</p>
 <ul>
 <li><p>打开项目下的<code>./configs/inference.yaml</code>文件，修改为你的本地路径。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imginference.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/blog-img//img/inference.png"></p>
 </li>
 </ul>
 <h2 id="六、运行"><a href="#六、运行" class="headerlink" title="六、运行"></a>六、运行</h2><p>终于到了激动人心的时刻了！</p>
 <ul>
 <li><p>在<code>Anaconda</code>的控制台中，激活你安装MimicBrush项目的虚拟环境，切换至项目文件目录，运行<code>python run_gradio3_demo.py</code>命令。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgmimicrun.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/blog-img//img/prompt.png"></p>
 </li>
 <li><p>当跑出以下提示语时，就证明你已经部署成功了。</p>
 <blockquote>
 <p>Tips 1: 可能会提示CUDA未安装的信息，不过不影响项目使用，如果你的电脑有使用英伟达显卡，不想看到报错信息的话，也可以根据你的显卡安装对应的CUDA，以后跑项目可能会比较快。</p>
 <p>Tips 2: 可能会提示<code>Triton is not available</code>的信息，同样不影响项目使用，如果你有强迫症，也可以<a target="_blank" rel="noopener" href="https://huggingface.co/r4ziel/xformers_pre_built/blob/main/triton-2.0.0-cp310-cp310-win_amd64.whl">下载</a>安装。</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgsuccess.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/blog-img//img/runlocal.png"></p>
 </li>
 <li><p>在本地输入<code> http://127.0.0.1:7860</code>，就可以体验此项目了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgtest.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/blog-img//img/mimicbrush.png"></p>
 <p><strong>以上就是在本地部署MimicBrush项目的全过程，以下为conda常用命令行，没兴趣可略过。</strong></p>
 </li>
 </ul>
