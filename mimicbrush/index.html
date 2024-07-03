@@ -7,6 +7,7 @@
   <title>如何将MimicBrush部署到你的电脑</title>
   
   <link rel="canonical" href="http://example.com/mimicbrush/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" />
   <link rel="stylesheet" href="//unpkg.com/heti/umd/heti.min.css">
   
   <meta name="description" content="当你看到这篇文章，对于MimicBrush项目应该已经有一定的了解了，想部署到自己的电脑上，跑一波看看，但是又苦于没有技术支撑？ 我来帮助你。 一、安装CondaMimicBrush这个项目是用Python语言编写的，因此你的电脑需要安装Python环境才可以，那么为什么要安装Conda呢？ 这是为">
@@ -40,9 +41,12 @@
 
   <!-- Preload fonts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-webfont/1.7.0/lxgwwenkai-regular.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-webfont/1.7.0/lxgwwenkai-regular.min.css"></noscript>
 
+<style>
+.shadow-div  {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; padding:40px;
+}
+</style>
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   
@@ -201,10 +205,14 @@
 </div>
 
         <div class="trans">
-          <h1>如何将MimicBrush部署到你的电脑</h1>
+          <h1>如何将MimicBrush部署到你的电脑</h1> 
+<a class="classtest-link" href="/tags/mimicbrush-%E5%B1%80%E9%83%A8%E9%87%8D%E7%BB%98/" rel="tag">mimicbrush 局部重绘</a>|Jul 2, 2024</p>
+<span class="post-word-count">3.7k字| </span>
+<span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span>次阅读</span>
+<div class="shadow-div">
 <p>当你看到这篇文章，对于MimicBrush项目应该已经有一定的了解了，想部署到自己的电脑上，跑一波看看，但是又苦于没有技术支撑？</p>
 <p>我来帮助你。</p>
-<h1 id="一、安装Conda"><a href="#一、安装Conda" class="headerlink" title="一、安装Conda"></a>一、安装Conda</h1><p>MimicBrush这个项目是用Python语言编写的，因此你的电脑需要安装Python环境才可以，那么为什么要安装Conda呢？</p>
+<h2 id="一、安装Conda"><a href="#一、安装Conda" class="headerlink" title="一、安装Conda"></a>一、安装Conda</h2><p>MimicBrush这个项目是用Python语言编写的，因此你的电脑需要安装Python环境才可以，那么为什么要安装Conda呢？</p>
 <p>这是为了方便你以后在本地跑其他的项目，既然你已经动了部署MimicBrush的贼心，我相信你以后也会恋上其他项目的。</p>
 <p>但是很多项目使用的Python版本是不一样的，使用到的一些第三方库版本也不一样，如果你的电脑上只有一个Python环境，那么当你以后想跑其他的项目时，不可避免的就会出现报错，通过Conda，你可以在本地安装无数个彼此独立的Python环境，一劳永逸。</p>
 <ul>
@@ -223,14 +231,14 @@
 </blockquote>
 </li>
 </ul>
-<h1 id="二、安装Git环境"><a href="#二、安装Git环境" class="headerlink" title="二、安装Git环境"></a>二、安装Git环境</h1><p>MimicBrush需要安装两个Checkpoints，并且提供了Git的下载链接，因此，如果你本地安装好Git环境，会事半功倍。</p>
+<h2 id="二、安装Git环境"><a href="#二、安装Git环境" class="headerlink" title="二、安装Git环境"></a>二、安装Git环境</h2><p>MimicBrush需要安装两个Checkpoints，并且提供了Git的下载链接，因此，如果你本地安装好Git环境，会事半功倍。</p>
 <ul>
 <li><p>下载与本机系统匹配的Git客户端，并完成安装。</p>
 </li>
 <li><p>安装完成后，使用 <code>git --version</code> 命令查看本地Git版本信息，输出版本信息说明安装成功。</p>
 </li>
 </ul>
-<h1 id="三、下载MimicBrush项目及Checkpoints到本地"><a href="#三、下载MimicBrush项目及Checkpoints到本地" class="headerlink" title="三、下载MimicBrush项目及Checkpoints到本地"></a>三、下载MimicBrush项目及Checkpoints到本地</h1><ul>
+<h2 id="三、下载MimicBrush项目及Checkpoints到本地"><a href="#三、下载MimicBrush项目及Checkpoints到本地" class="headerlink" title="三、下载MimicBrush项目及Checkpoints到本地"></a>三、下载MimicBrush项目及Checkpoints到本地</h2><ul>
 <li><p>使用Git命令将MimicBrush项目下载到本地电脑，为了避免文件名和<code>Checkpoints</code>中的<code>MimicBrush</code>冲突，建议将下载好的文件名命名为<code>Mimic</code>或者其他。</p>
 </li>
 <li><p>使用Git命令将MimicBrush项目的两个<code>Checkpoints</code>下载到本地电脑。</p>
@@ -239,7 +247,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgMimic.png"></p>
 </li>
 </ul>
-<h1 id="四、安装项目相关依赖"><a href="#四、安装项目相关依赖" class="headerlink" title="四、安装项目相关依赖"></a>四、安装项目相关依赖</h1><p>这个步骤是最麻烦的，主要是Python环境与第三方库的版本匹配，以及第三方库彼此之间的版本匹配问题，一旦版本不匹配，就会报错，修复好一个报错，又会有另一个报错，不过没有关系，我已经为你摸索出来一个适配的Python环境，你可以按照这个环境去安装。</p>
+<h2 id="四、安装项目相关依赖"><a href="#四、安装项目相关依赖" class="headerlink" title="四、安装项目相关依赖"></a>四、安装项目相关依赖</h2><p>这个步骤是最麻烦的，主要是Python环境与第三方库的版本匹配，以及第三方库彼此之间的版本匹配问题，一旦版本不匹配，就会报错，修复好一个报错，又会有另一个报错，不过没有关系，我已经为你摸索出来一个适配的Python环境，你可以按照这个环境去安装。</p>
 <ul>
 <li><p>首先使用<code>conda create -n mimic python=3.10.14</code>命令，创建一个名为”mimic”的虚拟环境，并安装<code>Python 3.10.14</code>版本, 虚拟环境的名字你可以任意修改。</p>
 <blockquote>
@@ -255,13 +263,13 @@
 </blockquote>
 </li>
 </ul>
-<h1 id="五、修改Checkpoints路径"><a href="#五、修改Checkpoints路径" class="headerlink" title="五、修改Checkpoints路径"></a>五、修改Checkpoints路径</h1><p>你自然是要把Checkpoints的路径修改为你本地的路径，如何修改？</p>
+<h2 id="五、修改Checkpoints路径"><a href="#五、修改Checkpoints路径" class="headerlink" title="五、修改Checkpoints路径"></a>五、修改Checkpoints路径</h2><p>你自然是要把Checkpoints的路径修改为你本地的路径，如何修改？</p>
 <ul>
 <li><p>打开项目下的<code>./configs/inference.yaml</code>文件，修改为你的本地路径。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imginference.png"></p>
 </li>
 </ul>
-<h1 id="六、运行"><a href="#六、运行" class="headerlink" title="六、运行"></a>六、运行</h1><p>终于到了激动人心的时刻了！</p>
+<h2 id="六、运行"><a href="#六、运行" class="headerlink" title="六、运行"></a>六、运行</h2><p>终于到了激动人心的时刻了！</p>
 <ul>
 <li><p>在<code>Anaconda</code>的控制台中，激活你安装MimicBrush项目的虚拟环境，切换至项目文件目录，运行<code>python run_gradio3_demo.py</code>命令。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/nichesiteroad.github.io/imgmimicrun.png"></p>
@@ -279,7 +287,7 @@
 </li>
 </ul>
 <hr>
-<h1 id="五、Conda常用命令"><a href="#五、Conda常用命令" class="headerlink" title="五、Conda常用命令"></a>五、Conda常用命令</h1><blockquote>
+<h2 id="其他、Conda常用命令"><a href="#其他、Conda常用命令" class="headerlink" title="其他、Conda常用命令"></a>其他、Conda常用命令</h2><blockquote>
 <p>conda create -n myenv python&#x3D;3.8  </p>
 <p>#创建一个名为”myenv”的虚拟环境，并安装<code>Python 3.8</code>版本</p>
 <p>conda env list</p>
@@ -298,6 +306,7 @@
 <p>#检测是否可从 Anaconda 存储库中获得<code>beautifulsoup4</code></p>
 </blockquote>
 
+</div>
 <script src="https://giscus.app/client.js"
         data-repo="nichesiteroad/nichesiteroad.github.io"
         data-repo-id="R_kgDOMPMWxw"
@@ -312,7 +321,7 @@
         data-lang="en"
         crossorigin="anonymous"
         async>
-</script>
+</script>  
         </div>
         <div class="row mt-2">
   <h3>Search</h3>
@@ -324,7 +333,7 @@
         <div class="row mt-2">
   
     <div class="eight columns">
-      <p id="madewith">Copyright ❤ NSR <span id="sitetime"></span>
+      <p id="madewith">Copyright ❤ NSR 
     </div>	
   
 </div>
@@ -351,7 +360,7 @@
         minutes - 0-59之间的整数，做为date对象的分钟数
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-        var t1 = Date.UTC(2024, 06, 30, 15, 00, 00); //北京时间2018-2-13 00:00:00
+        var t1 = Date.UTC(2017, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
         var diff = t2 - t1;
         var diffYears = Math.floor(diff / years);
@@ -365,6 +374,7 @@
 </script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
+ <span id="sitetime"></span>
 <span id="busuanzi_container_site_pv">
     总访问<span id="busuanzi_value_site_pv"></span>次
 </span>

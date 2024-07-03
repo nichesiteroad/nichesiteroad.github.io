@@ -7,6 +7,7 @@
   <title>NicheSiteRoad</title>
   
   <link rel="canonical" href="http://example.com/categories/self/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" />
   <link rel="stylesheet" href="//unpkg.com/heti/umd/heti.min.css">
   
   <meta name="description" content="">
@@ -44,9 +45,12 @@
 
   <!-- Preload fonts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-webfont/1.7.0/lxgwwenkai-regular.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-webfont/1.7.0/lxgwwenkai-regular.min.css"></noscript>
 
+<style>
+.shadow-div  {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; padding:40px;
+}
+</style>
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   
@@ -260,7 +264,7 @@
         <div class="row mt-2">
   
     <div class="eight columns">
-      <p id="madewith">Copyright ❤ NSR <span id="sitetime"></span>
+      <p id="madewith">Copyright ❤ NSR 
     </div>	
   
 </div>
@@ -287,7 +291,7 @@
         minutes - 0-59之间的整数，做为date对象的分钟数
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-        var t1 = Date.UTC(2024, 06, 30, 15, 00, 00); //北京时间2018-2-13 00:00:00
+        var t1 = Date.UTC(2017, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
         var diff = t2 - t1;
         var diffYears = Math.floor(diff / years);
@@ -301,6 +305,7 @@
 </script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
+ <span id="sitetime"></span>
 <span id="busuanzi_container_site_pv">
     总访问<span id="busuanzi_value_site_pv"></span>次
 </span>

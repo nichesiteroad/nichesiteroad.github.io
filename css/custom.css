@@ -1,6 +1,6 @@
 /* dm-serif-display-regular - latin */
 @font-face {
-  font-family: 'DM Serif Display';
+  font-family: "LXGW WenKai", sans-serif;
   font-style: normal;
   font-weight: 400;
   src: url('../fonts/dm-serif-display-v4-latin-regular.eot'); /* IE9 Compat Modes */
@@ -16,7 +16,7 @@
 
 /* inter-regular - latin */
 @font-face {
-  font-family: 'Inter';
+  font-family: "LXGW WenKai", sans-serif;
   font-style: normal;
   font-weight: 400;
   src: url('../fonts/inter-v2-latin-regular.eot'); /* IE9 Compat Modes */
