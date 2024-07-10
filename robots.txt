@@ -9,5 +9,5 @@ Disallow: /js/
 Disallow: /css/
 Disallow: /fonts/
 Disallow: /fancybox/
-Sitemap: https://nichesiteroad.com/sitemap.xml
-Sitemap: https://nichesiteroad.com/baidu_sitemap.xml
+Sitemap: https://zlbin.cc//sitemap.xml
+Sitemap: https://zlbin.cc//baidu_sitemap.xml
