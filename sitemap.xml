@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zlbin.cc/restart/</loc>
+    
+    <lastmod>2024-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zlbin.cc/mimicbrush/</loc>
     
     <lastmod>2024-07-04</lastmod>
@@ -60,10 +69,24 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://zlbin.cc/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
     <loc>https://zlbin.cc/categories/self/</loc>
+    <lastmod>2024-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlbin.cc/categories/life/</loc>
     <lastmod>2024-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
