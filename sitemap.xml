@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zlbin.cc/past-time/</loc>
+    
+    <lastmod>2024-07-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zlbin.cc/pillow-side-hustle/</loc>
     
     <lastmod>2024-07-11</lastmod>
@@ -72,13 +81,6 @@
   </url>
   
   <url>
-    <loc>https://zlbin.cc/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2024-07-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://zlbin.cc/tags/Hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2024-07-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -87,6 +89,20 @@
   
   <url>
     <loc>https://zlbin.cc/tags/mimicbrush-%E5%B1%80%E9%83%A8%E9%87%8D%E7%BB%98/</loc>
+    <lastmod>2024-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlbin.cc/tags/%E6%88%90%E9%95%BF/</loc>
+    <lastmod>2024-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlbin.cc/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2024-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -102,14 +118,14 @@
   </url>
   
   <url>
-    <loc>https://zlbin.cc/categories/life/</loc>
+    <loc>https://zlbin.cc/categories/self/</loc>
     <lastmod>2024-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://zlbin.cc/categories/self/</loc>
+    <loc>https://zlbin.cc/categories/life/</loc>
     <lastmod>2024-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
