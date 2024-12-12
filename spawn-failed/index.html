@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+  
+  <title>hexo d 出现 spawn failed的解决方案</title>
+  
+  <link rel="sitemap" href="https://zlbin.ccsitemap.xml" />
+  
+  <link rel="canonical" href="https://zlbin.cc/spawn-failed/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" />
+  <link rel="stylesheet" href="//unpkg.com/heti/umd/heti.min.css">
+  
+  <meta name="description" content="好几次执行 hexo d 命令时，都会出现 spawn failed 这个报错，之前一直没有在意，但是最近几次总是频繁的出现，导致写好的文章都没有办法正常上传，那么就有必要解决一下了。 网上的很多教程都提到删除.deploy_git 文件，但是我试了很多次之后，发现并不行，直到找到了这篇 [文章](">
+  
+  
+  <meta name="author" content="Lucas">
+  
+  
+  
+  <meta property="og:site_name" content="zlb&#39;s life" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="hexo d 出现 spawn failed的解决方案" />
+  
+  <meta property="og:description" content="好几次执行 hexo d 命令时，都会出现 spawn failed 这个报错，之前一直没有在意，但是最近几次总是频繁的出现，导致写好的文章都没有办法正常上传，那么就有必要解决一下了。 网上的很多教程都提到删除.deploy_git 文件，但是我试了很多次之后，发现并不行，直到找到了这篇 [文章](">
+  
+  <meta property="og:url" content="https://zlbin.cc/spawn-failed/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="hexo d 出现 spawn failed的解决方案">
+  
+  <meta name="twitter:description" content="好几次执行 hexo d 命令时，都会出现 spawn failed 这个报错，之前一直没有在意，但是最近几次总是频繁的出现，导致写好的文章都没有办法正常上传，那么就有必要解决一下了。 网上的很多教程都提到删除.deploy_git 文件，但是我试了很多次之后，发现并不行，直到找到了这篇 [文章](">
+  
+  
+  
+  
+  <meta name="twitter:url" content="https://zlbin.cc/spawn-failed/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<style>
+.shadow-div  {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; padding:40px;
+}
+</style>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NE7XYXMETZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NE7XYXMETZ');
+</script>
+
+  
+  <script src="/js/pic.min.js" defer></script>
+  
+
+  
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi Folks.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/categories/life" class="ml">Life</a>
+          
+        
+          
+          <a href="/categories/work" class="ml">Work</a>
+          
+        
+          
+          <a href="/categories/self" class="ml">Self</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+          <h1>hexo d 出现 spawn failed的解决方案</h1> 
+<a class="classtest-link" href="/tags/hexo/" rel="tag">hexo</a>|Dec 12, 2024</p>
+<span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span>次阅读</span>
+<div class="shadow-div">
+<p>好几次执行 <code>hexo d</code> 命令时，都会出现 spawn failed 这个报错，之前一直没有在意，但是最近几次总是频繁的出现，导致写好的文章都没有办法正常上传，那么就有必要解决一下了。</p>
+<p>网上的很多教程都提到删除<code>.deploy_git</code> 文件，但是我试了很多次之后，发现并不行，直到找到了这篇 <strong>[文章](<a target="_blank" rel="noopener" href="https://1187100546.github.io/2019/11/24/spawn-failed/">hexo发生error：spawn failed错误的解决方法 | 花花的blog | 厚积薄发</a>)</strong> ，这个Bug终于算是彻底解决了。</p>
+<p>整理一下解决方案，希望可以帮助到更多的人。</p>
+<hr>
+<h2 id="一、是否可以正常连接到服务器"><a href="#一、是否可以正常连接到服务器" class="headerlink" title="一、是否可以正常连接到服务器"></a><em>一、是否可以正常连接到服务器</em></h2><ul>
+<li><p>在Git控制台执行 <code>ssh -T git@github.com</code> 命令，检查是否可以与远程通信，如果出现 Hi…  你的 GitHub 账户名称的内容，说明可以正常连接。</p>
+</li>
+<li><p>如果出现无法连接的情况，可以参考我这篇 <strong><a href="%5B%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%5D(https://zlbin.cc/hexo-site/)">文章</a></strong> ，重新进行SSH key的设置。</p>
+</li>
+<li><p>如果重新设置之后，仍然无法正常连接，可以在存放Key的目录下新建一个config文件。</p>
+<p><img title="" src="https://cdn.jsdelivr.net/gh/nichesiteroad/blog-img//img/config%E6%96%87%E4%BB%B6.png" alt="" data-align="left">然后在这个文件里面填入以下内容，再执行 <code>ssh -T git@github.com</code> 命令，应该就可以解决。</p>
+<pre><code>Host github.com
+User 你GitHub的邮箱
+Hostname ssh.github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+Port 443
+</code></pre>
+</li>
+</ul>
+<h2 id="二、永久解决-spawn-failed-报错"><a href="#二、永久解决-spawn-failed-报错" class="headerlink" title="二、永久解决 spawn failed 报错"></a><em>二、永久解决 spawn failed 报错</em></h2><ul>
+<li><p>打开_config.yml配置文件</p>
+</li>
+<li><p>修改以下内容</p>
+<p>  deploy:<br>  type: git<br>  repo: <a target="_blank" rel="noopener" href="https://github.com/yourname/yourname.github.io.git">https://github.com/yourname/yourname.github.io.git</a><br>  branch: main</p>
+</li>
+</ul>
+<p>将其中的repo修改为</p>
+<p><code>git@github.com:yourname/yourname.github.io.git</code></p>
+<hr>
+<p><em><strong>希望可以帮助到你。</strong></em></p>
+
+</div>
+<script src="https://giscus.app/client.js"
+        data-repo="nichesiteroad/nichesiteroad.github.io"
+        data-repo-id="R_kgDOMPMWxw"
+        data-category="[ENTER CATEGORY NAME HERE]"
+        data-category-id="[ENTER CATEGORY ID HERE]"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>  
+        </div>
+        <div class="row mt-2">
+  <h3>Search</h3>
+  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
+  <div style="margin-top: 1.5rem;">
+    <ul id="result"></ul>
+  </div>
+</div>
+        <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Copyright ❤ NSR 
+    </div>	
+  
+</div>
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2024, 07, 01, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+ <span id="sitetime"></span>
+<span id="busuanzi_container_site_pv">
+    总访问<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span class="post-count">总字数41.4k </span>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>
