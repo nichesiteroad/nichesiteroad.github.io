@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" />
   <link rel="stylesheet" href="//unpkg.com/heti/umd/heti.min.css">
   
-  <meta name="description" content="好几次执行 hexo d 命令时，都会出现 spawn failed 这个报错，之前一直没有在意，但是最近几次总是频繁的出现，导致写好的文章都没有办法正常上传，那么就有必要解决一下了。 网上的很多教程都提到删除.deploy_git 文件，但是我试了很多次之后，发现并不行，直到找到了这篇 [文章](">
+  <meta name="description" content="好几次执行 hexo d 命令时，都会出现 spawn failed 这个报错，之前一直没有在意，但是最近几次总是频繁的出现，导致写好的文章都没有办法正常上传，那么就有必要解决一下了。 网上的很多教程都提到删除.deploy_git 文件，但是我试了很多次之后，发现并不行，直到在网上搜索到一篇教程，">
   
   
   <meta name="author" content="Lucas">
@@ -23,14 +23,14 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="hexo d 出现 spawn failed的解决方案" />
   
-  <meta property="og:description" content="好几次执行 hexo d 命令时，都会出现 spawn failed 这个报错，之前一直没有在意，但是最近几次总是频繁的出现，导致写好的文章都没有办法正常上传，那么就有必要解决一下了。 网上的很多教程都提到删除.deploy_git 文件，但是我试了很多次之后，发现并不行，直到找到了这篇 [文章](">
+  <meta property="og:description" content="好几次执行 hexo d 命令时，都会出现 spawn failed 这个报错，之前一直没有在意，但是最近几次总是频繁的出现，导致写好的文章都没有办法正常上传，那么就有必要解决一下了。 网上的很多教程都提到删除.deploy_git 文件，但是我试了很多次之后，发现并不行，直到在网上搜索到一篇教程，">
   
   <meta property="og:url" content="https://zlbin.cc/spawn-failed/" />
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="hexo d 出现 spawn failed的解决方案">
   
-  <meta name="twitter:description" content="好几次执行 hexo d 命令时，都会出现 spawn failed 这个报错，之前一直没有在意，但是最近几次总是频繁的出现，导致写好的文章都没有办法正常上传，那么就有必要解决一下了。 网上的很多教程都提到删除.deploy_git 文件，但是我试了很多次之后，发现并不行，直到找到了这篇 [文章](">
+  <meta name="twitter:description" content="好几次执行 hexo d 命令时，都会出现 spawn failed 这个报错，之前一直没有在意，但是最近几次总是频繁的出现，导致写好的文章都没有办法正常上传，那么就有必要解决一下了。 网上的很多教程都提到删除.deploy_git 文件，但是我试了很多次之后，发现并不行，直到在网上搜索到一篇教程，">
   
   
   
@@ -208,7 +208,7 @@
 <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span>次阅读</span>
 <div class="shadow-div">
 <p>好几次执行 <code>hexo d</code> 命令时，都会出现 spawn failed 这个报错，之前一直没有在意，但是最近几次总是频繁的出现，导致写好的文章都没有办法正常上传，那么就有必要解决一下了。</p>
-<p>网上的很多教程都提到删除<code>.deploy_git</code> 文件，但是我试了很多次之后，发现并不行，直到找到了这篇 <strong>[文章](<a target="_blank" rel="noopener" href="https://1187100546.github.io/2019/11/24/spawn-failed/">hexo发生error：spawn failed错误的解决方法 | 花花的blog | 厚积薄发</a>)</strong> ，这个Bug终于算是彻底解决了。</p>
+<p>网上的很多教程都提到删除<code>.deploy_git</code> 文件，但是我试了很多次之后，发现并不行，直到在网上搜索到一篇教程，这个Bug终于算是彻底解决了。</p>
 <p>整理一下解决方案，希望可以帮助到更多的人。</p>
 <hr>
 <h2 id="一、是否可以正常连接到服务器"><a href="#一、是否可以正常连接到服务器" class="headerlink" title="一、是否可以正常连接到服务器"></a><em>一、是否可以正常连接到服务器</em></h2><ul>
@@ -217,14 +217,10 @@
 <li><p>如果出现无法连接的情况，可以参考我这篇 <strong><a href="%5B%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%5D(https://zlbin.cc/hexo-site/)">文章</a></strong> ，重新进行SSH key的设置。</p>
 </li>
 <li><p>如果重新设置之后，仍然无法正常连接，可以在存放Key的目录下新建一个config文件。</p>
-<p><img title="" src="https://cdn.jsdelivr.net/gh/nichesiteroad/blog-img//img/config%E6%96%87%E4%BB%B6.png" alt="" data-align="left">然后在这个文件里面填入以下内容，再执行 <code>ssh -T git@github.com</code> 命令，应该就可以解决。</p>
-<pre><code>Host github.com
-User 你GitHub的邮箱
-Hostname ssh.github.com
-PreferredAuthentications publickey
-IdentityFile ~/.ssh/id_rsa
-Port 443
-</code></pre>
+<img title="" src="https://cdn.jsdelivr.net/gh/nichesiteroad/blog-img//img/config%E6%96%87%E4%BB%B6.png" alt="" data-align="inline">
+
+<p>然后在这个文件里面填入以下内容，再执行 <code>ssh -T git@github.com</code> 命令，应该就可以解决。</p>
+<p>Host github.com<br>User 你GitHub的邮箱<br>Hostname ssh.github.com<br>PreferredAuthentications publickey<br>IdentityFile ~&#x2F;.ssh&#x2F;id_rsa<br>Port 443</p>
 </li>
 </ul>
 <h2 id="二、永久解决-spawn-failed-报错"><a href="#二、永久解决-spawn-failed-报错" class="headerlink" title="二、永久解决 spawn failed 报错"></a><em>二、永久解决 spawn failed 报错</em></h2><ul>
