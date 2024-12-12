@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+  
+  <title>如何解决群晖NAS更换网络后，无法访问的问题</title>
+  
+  <link rel="sitemap" href="https://zlbin.ccsitemap.xml" />
+  
+  <link rel="canonical" href="https://zlbin.cc/how-to-solove-synology-nas-network-after-replacement/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" />
+  <link rel="stylesheet" href="//unpkg.com/heti/umd/heti.min.css">
+  
+  <meta name="description" content="去年7月份左右，家里安装了一台群晖NAS，型号是DS720+，两块4T硬盘，组Raid1。 使用群晖的这一年，还是比较方便的，做了磁盘映射之后，相当于电脑上多出来4T的内存。 我使用的场景主要是三个：  存放照片：手机安装相应App后，手机拍摄的照片，就可以及时备份到NAS中；  下载影视剧：利用群">
+  
+  
+  <meta name="author" content="Lucas">
+  
+  
+  
+  <meta property="og:site_name" content="zlb&#39;s life" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="如何解决群晖NAS更换网络后，无法访问的问题" />
+  
+  <meta property="og:description" content="去年7月份左右，家里安装了一台群晖NAS，型号是DS720+，两块4T硬盘，组Raid1。 使用群晖的这一年，还是比较方便的，做了磁盘映射之后，相当于电脑上多出来4T的内存。 我使用的场景主要是三个：  存放照片：手机安装相应App后，手机拍摄的照片，就可以及时备份到NAS中；  下载影视剧：利用群">
+  
+  <meta property="og:url" content="https://zlbin.cc/how-to-solove-synology-nas-network-after-replacement/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="如何解决群晖NAS更换网络后，无法访问的问题">
+  
+  <meta name="twitter:description" content="去年7月份左右，家里安装了一台群晖NAS，型号是DS720+，两块4T硬盘，组Raid1。 使用群晖的这一年，还是比较方便的，做了磁盘映射之后，相当于电脑上多出来4T的内存。 我使用的场景主要是三个：  存放照片：手机安装相应App后，手机拍摄的照片，就可以及时备份到NAS中；  下载影视剧：利用群">
+  
+  
+  
+  
+  <meta name="twitter:url" content="https://zlbin.cc/how-to-solove-synology-nas-network-after-replacement/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<style>
+.shadow-div  {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; padding:40px;
+}
+</style>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NE7XYXMETZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NE7XYXMETZ');
+</script>
+
+  
+  <script src="/js/pic.min.js" defer></script>
+  
+
+  
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi Folks.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/categories/life" class="ml">Life</a>
+          
+        
+          
+          <a href="/categories/work" class="ml">Work</a>
+          
+        
+          
+          <a href="/categories/self" class="ml">Self</a>
+          
+        
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+          <h1>如何解决群晖NAS更换网络后，无法访问的问题</h1> 
+<a class="classtest-link" href="/tags/%E7%BE%A4%E6%99%96/" rel="tag">群晖</a>|Sep 1, 2024</p>
+<span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span>次阅读</span>
+<div class="shadow-div">
+<p>去年7月份左右，家里安装了一台群晖NAS，型号是DS720+，两块4T硬盘，组Raid1。</p>
+<p>使用群晖的这一年，还是比较方便的，做了磁盘映射之后，相当于电脑上多出来4T的内存。</p>
+<p>我使用的场景主要是三个：</p>
+<ol>
+<li><p>存放照片：手机安装相应App后，手机拍摄的照片，就可以及时备份到NAS中；</p>
+</li>
+<li><p>下载影视剧：利用群晖后台下载影视剧，之后多设备都可以播放NAS里面的影视剧；</p>
+</li>
+<li><p>存放文件：日常文件存储。</p>
+</li>
+</ol>
+<p>但是，前两天因为子网关出现问题，换了一套新的网关之后，可以正常上网，但是NAS无法正常访问，自然也进不去控制台，甚至用<a target="_blank" rel="noopener" href="http://jump.bdimg.com/safecheck/index?url=x+Z5mMbGPAt3cM3pWnRnxfOljX2z29afQjIj43fWSK2yOb55np2EpsVPznfuhlppKN9GPoU/CNyHhMJ5C4W1SvXkfP8wZFYwK+q6t9e9hi+e0C06/70+3c4fVHLs5MC0U9LI4CCJvs4wPGbuJnYGNA==">http://find.synology.com/</a>也找不到NAS。</p>
+<p>今天这篇文章，就结合我的经验，整理一下遇到这种情况的处理办法。</p>
+<hr>
+<p>首先造成这种问题，大概率是因为：***<u>更换网关之前，忘记将NAS的联网方式从静态IP切换成DHCP</u>*** 。</p>
+<p>因此就会导致设备无法联网，自然也是没有办法通过IP直接访问NAS进行修改。</p>
+<blockquote>
+<p>所以当你有意向更换路由器或者网关时，家里有装NAS，一定要先进入DSM，将网络配置修改为DHCP。</p>
+<p>修改路径：控制面板-网络-网络界面-局域网X，点击局域网X，选择<code> 编辑</code> ,将网络配置修改为DHCP。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/blog-img//img/DSM.png"></p>
+</blockquote>
+<p>但是，当你看到我这篇文章的时候，说明你已经犯了这个错误。</p>
+<p>好吧，那就看看如何挽救吧。</p>
+<h2 id="1-找到原先的路由器-网关，进入DSM修改"><a href="#1-找到原先的路由器-网关，进入DSM修改" class="headerlink" title="1. 找到原先的路由器&#x2F;网关，进入DSM修改"></a>1. 找到原先的路由器&#x2F;网关，进入DSM修改</h2><p>这当然是最简单的办法，如果你能找到之前的路由器或者网关，那就先替换掉现在的路由器&#x2F;网关，输入原先访问NAS的IP，进入DSM平台，按照上述方法，将网络配置修改为DHCP。</p>
+<p>然后再将新的路由器&#x2F;网关安装好，利用网线将NAS安装好之后，下载群晖的Synology Assistant工具，点击<code> 搜索</code>，就会扫描到当前网络下面的NAS，箭头所示位置会显示新的访问IP，在浏览器中输入ip:5000&#x2F;5001，就可以正常访问了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/nichesiteroad/blog-img//img/SA.png"></p>
+<blockquote>
+<p>有两个需要注意的点：</p>
+<ol>
+<li><p>最好从路由器&#x2F;网关拉出两条网线，一条连接NAS，一条连接电脑，这样会更加方便扫描到。我一开始使用笔记本电脑连接这个网关的无线网络，发现能扫描出来，但是状态显示失败，后来用网线直连，这个问题就解决了。</p>
+</li>
+<li><p>如果提示未扫描到你的NAS设备，也不要慌，按照SA的提示去进行设置，比如：关掉防火墙；启用兼容性等。</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="2-直连"><a href="#2-直连" class="headerlink" title="2. 直连"></a>2. 直连</h2><p>好吧，第一个办法无法解决，那就使用稍微麻烦一些的吧。</p>
+<img src="https://cdn.jsdelivr.net/gh/nichesiteroad/blog-img//img/3.png" title="" alt="" data-align="center">
+
+<p>这个办法是Synology官方给到的回复，你也可以试试，我在没有拿回旧网关之前，使用过这个办法，没有奏效。</p>
+<blockquote>
+<p>提一嘴，我是用第一个办法，解决NAS无法访问的问题的。</p>
+</blockquote>
+<p><em>使用这个办法时，需要注意的是，将NAS和计算机用一根网线连接，计算机不要连接无线。</em></p>
+<p>其中提到的电脑IP固定，如何设置可以去网上搜索一下。</p>
+<h2 id="3-重置NAS"><a href="#3-重置NAS" class="headerlink" title="3. 重置NAS"></a>3. 重置NAS</h2><p>如果以上办法都不行的话，也不要气馁，你的NAS还是可以实现正常访问的。</p>
+<p>说来也简单，但是后续，你需要重新设置的地方就比较多了，不到万不得已的情况下，最好不要使用这个办法。</p>
+<p>那就是直接[重置NAS](<a target="_blank" rel="noopener" href="https://kb.synology.cn/zh-cn/DSM/tutorial/How_to_reset_my_Synology_NAS_7#t1">如何重置Synology NAS？ （适用于 DSM 6.2.4 或以上版本） - Synology 知识中心</a>)，使用其中的模式一，是不会导致你硬盘里面的文件丢失的。</p>
+<p>以上，希望这篇文章可以帮助到你。</p>
+
+</div>
+<script src="https://giscus.app/client.js"
+        data-repo="nichesiteroad/nichesiteroad.github.io"
+        data-repo-id="R_kgDOMPMWxw"
+        data-category="[ENTER CATEGORY NAME HERE]"
+        data-category-id="[ENTER CATEGORY ID HERE]"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>  
+        </div>
+        <div class="row mt-2">
+  <h3>Search</h3>
+  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
+  <div style="margin-top: 1.5rem;">
+    <ul id="result"></ul>
+  </div>
+</div>
+        <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Copyright ❤ NSR 
+    </div>	
+  
+</div>
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2024, 07, 01, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+ <span id="sitetime"></span>
+<span id="busuanzi_container_site_pv">
+    总访问<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span class="post-count">总字数41k </span>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>
